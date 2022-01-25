@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
 function GlobalStyle() {
-    return (
-        <style global jsx>{`
+  return (
+    <style global jsx>{`
       * {
         margin: 0;
         padding: 0;
@@ -29,8 +29,8 @@ function GlobalStyle() {
       }
       /* ./App fit Height */ 
     `}</style>
-    );
-  }
+  );
+}
 
 function Titulo(props) {
   const Tag = props.tag || 'h1';
@@ -42,6 +42,7 @@ function Titulo(props) {
                 color: ${appConfig.theme.colors.neutrals['000']};
                 font-size: 24px;
                 font-weight: 600;
+                font-family: 'Roboto Mono', monospace;
             }
             `}</style>
     </>
@@ -62,13 +63,13 @@ function Titulo(props) {
 // export default HomePage
 
 export default function PaginaInicial() {
-//   const username = 'omariosouto';
-  const [username, setUsername] = React.useState('');
+  //   const username = 'omariosouto';
+  const [username, setUsername] = React.useState('ohenriques');
   const roteamento = useRouter();
 
   return (
     <>
-    <GlobalStyle/>
+      <GlobalStyle />
       <Box
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -91,7 +92,7 @@ export default function PaginaInicial() {
             boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
             backgroundColor: appConfig.theme.colors.neutrals[700],
           }}
-        >
+          >
           {/* Formulário */}
           <Box
             as="form"
@@ -124,7 +125,7 @@ export default function PaginaInicial() {
                             }}
                         /> */}
             <TextField
-              value={username}
+              // value={username}
               onChange={function (event) {
                 console.log('usuario digitou', event.target.value);
                 // Onde ta o valor?
@@ -152,8 +153,8 @@ export default function PaginaInicial() {
               buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
                 mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                mainColorLight: appConfig.theme.colors.primary[100],
+                mainColorStrong: appConfig.theme.colors.primary[900],
               }}
             />
           </Box>
