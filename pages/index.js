@@ -62,7 +62,7 @@ function Titulo(props) {
 // export default HomePage
 
 export default function PaginaInicial() {
-  // const username = 'omariosouto';
+  const username = 'omariosouto';
   const [username, setUsername] = React.useState('');
   const roteamento = useRouter();
 
@@ -134,12 +134,14 @@ export default function PaginaInicial() {
                 setUsername(valor);
               }}
               fullWidth
+              placeholder={'Insira o nome do repositório do Github'}
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
                   mainColor: appConfig.theme.colors.neutrals[900],
                   mainColorHighlight: appConfig.theme.colors.primary[500],
                   backgroundColor: appConfig.theme.colors.neutrals[800],
+
                 },
               }}
             />
