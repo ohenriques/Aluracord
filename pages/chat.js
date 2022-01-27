@@ -3,7 +3,6 @@ import React from 'react';
 import appConfig from '../config.json';
 
 export default function ChatPage() {
-
     const [mensagem, setMensagem] = React.useState('');
     const [listaDeMensagem, setListaDeMensagem] = React.useState([]);
     /*
@@ -100,7 +99,7 @@ export default function ChatPage() {
                             placeholder="Insira sua mensagem aqui..."
                             type="textarea"
                             onChange={(event) => {
-                                console.log('mensagem:', event.target.value);
+                                // console.log('mensagem:', event.target.value);
                                 const valor = event.target.value;
                                 setMensagem(valor);
                             }}
@@ -147,12 +146,12 @@ function Header() {
 }
 
 function MessageList(props) {
-    console.log(props);
+    // console.log(props);
     return (
         <Box
             tag="ul"
             styleSheet={{
-                overflow: 'scroll',
+                overflow: 'auto',
                 display: 'flex',
                 flexDirection: 'column-reverse',
                 flex: 1,
@@ -200,7 +199,7 @@ function MessageList(props) {
                                 }}
                                 tag="span"
                             >
-                                {(new Date().toLocaleTimeString())}
+                                {(new Date().toLocaleDateString())}
                             </Text>
                         </Box>
                         {mensagem.texto}

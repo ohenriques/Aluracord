@@ -81,7 +81,7 @@ export default function PaginaInicial() {
             onSubmit={function (event) {
               event.preventDefault();
               console.log('Alguém submeteu o form');
-              roteamento.push('/chat');
+              roteamento.push(`/chat?username=${username}`);
               //recurso default
               // window.location.href = '/chat';
             }}
@@ -111,7 +111,7 @@ export default function PaginaInicial() {
             <TextField
               // value={username}
               onChange={function (event) {
-                console.log('usuario digitou', event.target.value);
+                // console.log('usuario digitou', event.target.value);
                 // verificando o tamanho do value
                 const userNameLenth = event.target.value.length;
                 if (userNameLenth > 2) {
