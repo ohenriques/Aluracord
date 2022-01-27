@@ -3,34 +3,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
-function GlobalStyle() {
-  return (
-    <style global jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style: none;
-      }
-      body {
-        font-family: 'Open Sans', sans-serif;
-      }
-      /* App fit Height */ 
-      html, body, #__next {
-        min-height: 100vh;
-        display: flex;
-        flex: 1;
-      }
-      #__next {
-        flex: 1;
-      }
-      #__next > * {
-        flex: 1;
-      }
-      /* ./App fit Height */ 
-    `}</style>
-  );
-}
 
 function Titulo(props) {
   const Tag = props.tag || 'h1';
@@ -49,6 +21,14 @@ function Titulo(props) {
   );
 }
 
+async function getApiGitHub(params) {
+  await fetch(`https://api.github.com/users/${params}`).then(function (respostaDoServidor) {
+    return respostaDoServidor.json()
+  })
+    .then(function (respostaConvertida) {
+       console.log(respostaConvertida)
+    })
+}
 // Componente React
 // function HomePage() {
 //     // JSX
@@ -64,12 +44,14 @@ function Titulo(props) {
 
 export default function PaginaInicial() {
   //   const username = 'omariosouto';
-  const [username, setUsername] = React.useState('ohenriques');
+  // 
+  const [username, setUsername] = React.useState('alura');
   const roteamento = useRouter();
+   getApiGitHub(username)
+  // console.log(roteamento);
 
   return (
     <>
-      <GlobalStyle />
       <Box
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -92,14 +74,15 @@ export default function PaginaInicial() {
             boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
             backgroundColor: appConfig.theme.colors.neutrals[700],
           }}
-          >
+        >
           {/* Formulário */}
           <Box
             as="form"
-            onSubmit={function (infosDoEvento) {
-              infosDoEvento.preventDefault();
+            onSubmit={function (event) {
+              event.preventDefault();
               console.log('Alguém submeteu o form');
               roteamento.push('/chat');
+              //recurso default
               // window.location.href = '/chat';
             }}
             styleSheet={{
@@ -114,7 +97,8 @@ export default function PaginaInicial() {
 
             {/* <input
                             type="text"
-                            value={username}
+                            // value={username}
+                            value='oss'
                             onChange={function (event) {
                                 console.log('usuario digitou', event.target.value);
                                 // Onde ta o valor?
@@ -128,11 +112,17 @@ export default function PaginaInicial() {
               // value={username}
               onChange={function (event) {
                 console.log('usuario digitou', event.target.value);
-                // Onde ta o valor?
-                const valor = event.target.value;
-                // Trocar o valor da variavel
-                // através do React e avise quem precisa
-                setUsername(valor);
+                // verificando o tamanho do value
+                const userNameLenth = event.target.value.length;
+                if (userNameLenth > 2) {
+                  // console.log(userNameLenth);
+                  // Onde ta o valor?
+                  // Trocar o valor da variavel
+                  const valor = event.target.value;
+                  // através do React e avise quem precisa
+                  setUsername(valor);
+                }
+
               }}
               fullWidth
               placeholder={'Insira o nome do repositório do Github'}
