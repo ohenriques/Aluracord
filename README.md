@@ -31,25 +31,25 @@
 - [ ] Colocar botões de interações para mandar a mensagem
 #
 # Others links 😉🔍
- - [Como trabalhar com um Fatch]([https://link](https://medium.com/@omariosouto/entendendo-como-fazer-ajax-com-a-fetchapi-977ff20da3c6))
+ - [Como trabalhar com um Fatch](https://medium.com/@omariosouto/entendendo-como-fazer-ajax-com-a-fetchapi-977ff20da3c6)
 - Componentes ✳
   - [Mui(Material UI)](https://mui.com/pt/)
-  - [Skynexui]([https://link](https://skynexui.dev/))
+  - [Skynexui](https://skynexui.dev/)
 - Vídeos 🎬
-  - [Validar Form com Reac]([https://link](https://www.youtube.com/watch?v=cMq6k7ymv2s))
-  - [Github Pro + Eslint]([https://www.youtube.com/watch?v=yMRSDdifGW8&t=2s])
-  - [Aprender forEach e map]([https://link](https://www.youtube.com/watch?v=JbzcLKiTThk))
+  - [Validar Form com Reac](https://www.youtube.com/watch?v=cMq6k7ymv2s)
+  - [Github Pro + Eslint](https://www.youtube.com/watch?v=yMRSDdifGW8&t=2s)
+  - [Aprender forEach e map](https://www.youtube.com/watch?v=JbzcLKiTThk)
 
 - Complementos 🤙🏻
-  - [Strategy Pattern]([https://link](https://www.youtube.com/watch?v=S-jqd6WZ7M0))
-  - [Pegando dados de uma API com React]([https://link](https://www.youtube.com/watch?v=85vJXFpXLQw))
-  - [O sistema de rotas do NextJS, principais dúvidas]([https://link](https://www.youtube.com/watch?v=-kVnp3fg-v4))
-  - [Linter]([https://link](https://www.youtube.com/watch?v=yMRSDdifGW8))
-  - [Centralizar conteúdo na tela]([https://link](https://www.youtube.com/watch?v=Cu-HP-gvggg))
-  - [CSS Grid Garden]([https://link](https://cssgridgarden.com/))
-  - [CSS Flexbox frog]([https://link](https://flexboxfroggy.com/)) 🎮
-  - [Storybook na prática]([https://link](https://www.youtube.com/watch?v=R41_Qedrzik&t=7s))
-  - [Configurando ambiente JavaScript/NodeJS/Yarn]([https://link](https://www.youtube.com/watch?v=GIz71YGzwP4))
-  - [Documentação interativa com Storybook do SkynexUI]([https://link](https://storybook.skynexui.dev/?path=/story/components-box--box-component))
+  - [Strategy Pattern](https://www.youtube.com/watch?v=S-jqd6WZ7M0)
+  - [Pegando dados de uma API com React](https://www.youtube.com/watch?v=85vJXFpXLQw)
+  - [O sistema de rotas do NextJS, principais dúvidas](https://www.youtube.com/watch?v=-kVnp3fg-v4)
+  - [Linter](https://www.youtube.com/watch?v=yMRSDdifGW8)
+  - [Centralizar conteúdo na tela](https://www.youtube.com/watch?v=Cu-HP-gvggg)
+  - [CSS Grid Garden](https://cssgridgarden.com/)
+  - [CSS Flexbox frog](https://flexboxfroggy.com/) 🎮
+  - [Storybook na prática](https://www.youtube.com/watch?v=R41_Qedrzik&t=7s)
+  - [Configurando ambiente JavaScript/NodeJS/Yarn](https://www.youtube.com/watch?v=GIz71YGzwP4)
+  - [Documentação interativa com Storybook do SkynexUI](https://storybook.skynexui.dev/?path=/story/components-box--box-component)
   - [Extensão do Chrome para gravar tela](https://chrome.google.com/webstore/detail/screencastify-screen-vide/mmeijimgabbpbgpdklnllpncmdofkcpn) 🎥
 # 
