@@ -3,7 +3,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
-
 function Titulo(props) {
   const Tag = props.tag || 'h1';
   return (
@@ -21,14 +20,12 @@ function Titulo(props) {
   );
 }
 
-async function getApiGitHub(params) {
-  await fetch(`https://api.github.com/users/${params}`).then(function (respostaDoServidor) {
-    return respostaDoServidor.json()
-  })
-    .then(function (respostaConvertida) {
-       console.log(respostaConvertida)
-    })
-}
+// function getApiGitHub(params) {
+//   fetch(`https://api.github.com/users/${params}`).then(async (rest) => {
+//     const result = await rest.json();
+//     // console.log(result);
+//   })
+// }
 // Componente React
 // function HomePage() {
 //     // JSX
@@ -44,10 +41,10 @@ async function getApiGitHub(params) {
 
 export default function PaginaInicial() {
   //   const username = 'omariosouto';
-  // 
   const [username, setUsername] = React.useState('alura');
   const roteamento = useRouter();
-   getApiGitHub(username)
+
+  // getApiGitHub(username)
   // console.log(roteamento);
 
   return (

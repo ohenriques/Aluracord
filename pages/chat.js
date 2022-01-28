@@ -1,10 +1,29 @@
-import { Box, Text, TextField, Image, Button } from '@skynexui/components';
+import { Box, Text, TextField, Image, Button, GridDisplay } from '@skynexui/components';
 import React from 'react';
 import appConfig from '../config.json';
+import { Icon } from '@skynexui/components';
+import { createClient } from '@supabase/supabase-js'
+
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzMzMDk3MSwiZXhwIjoxOTU4OTA2OTcxfQ.O966G0PcuxAGuJMKuM_wUI7cvywX0RqUOOUdQO-ltRs';
+const SUPABASE_URL = 'https://vzdpqtqrbvqovbmawmzp.supabase.co'
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 
 export default function ChatPage() {
     const [mensagem, setMensagem] = React.useState('');
     const [listaDeMensagem, setListaDeMensagem] = React.useState([]);
+
+    React.useEffect(() => {
+        supabaseClient
+            .from('mensagens')
+            .select('*')
+            .order('id', { ascending: false })
+            .then(({ data }) => {
+                console.log('Dados da consulta:', data);
+                setListaDeMensagem(data);
+            })
+    }, [])
+
     /*
     
     // Usuario 
@@ -29,15 +48,23 @@ export default function ChatPage() {
 
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
-            id: listaDeMensagem.length + 1,
             de: 'ohenriques',
             texto: novaMensagem,
         }
+
+        supabaseClient
+            .from('mensagens')
+            .insert([
+                mensagem
+            ])
+            .then(({ data }) => {
+                console.log('Criando mensagem', data);
+                setListaDeMensagem([
+                    data[0],
+                    ...listaDeMensagem,
+                ]);
+            })
         // chamada do backend
-        setListaDeMensagem([
-            mensagem,
-            ...listaDeMensagem,
-        ]);
         setMensagem('');
     }
 
@@ -120,6 +147,24 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        <Button iconName="arrowRight" 
+                        styleSheet={{
+                            contrastColor: appConfig.theme.colors.neutrals["000"],
+                            mainColor: appConfig.theme.colors.primary[500],
+                            mainColorLight: appConfig.theme.colors.primary[800],
+                            mainColorStrong: appConfig.theme.colors.primary[900],
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}/>
+
+
+                        {/* <Icon
+                            label="Icon Component"
+                            name="FaArrowCircleRight"
+                            styleSheet={{
+                                color: 'red'
+                            }}
+                        /> */}
                     </Box>
                 </Box>
             </Box>
@@ -186,7 +231,7 @@ function MessageList(props) {
                                     display: 'inline-block',
                                     marginRight: '8px',
                                 }}
-                                src={`https://github.com/ohenriques.png`}
+                                src={`https://github.com/${mensagem.de}.png`}
                             />
                             <Text tag="strong">
                                 {mensagem.de}
@@ -207,5 +252,6 @@ function MessageList(props) {
                 );
             })}
         </Box>
+
     )
 }
