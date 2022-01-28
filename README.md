@@ -19,6 +19,8 @@
 
 # Desafios 3 🔥
 - [ ] Paulo: Colocar o botão de **OK** para enviar a mensagem
+  - [x] Criar Botão
+  - [ ] Criar lógica para enviar a mensagem
 - [ ] Mario: Colocar um botão de apagar mensagem! Dica: use o **filter**
 
 # Desafios 4 🔥
