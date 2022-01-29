@@ -1,6 +1,7 @@
 {
-    "message": "[Welcome Back Wizard!]",
-    "name": "Aluracord 🦊 By:Harry",
+    "message": "[Welcome Back!]",
+    "name": "Aluracord 🧹 By:Mario Bros",
+    "backgroundImage":"url(https://images5.alphacoders.com/444/444306.jpg)",
     "theme": {
       "colors": {
         "primary": {
@@ -28,6 +29,10 @@
           "800": "#181F25",
           "900": "#101418",
           "999": "#080A0C"
+        },
+        "transparents": {
+          "200": "#CBD2D982",
+          "700": "#21293182"
         }
       }
     },

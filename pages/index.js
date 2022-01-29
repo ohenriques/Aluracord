@@ -53,7 +53,7 @@ export default function PaginaInicial() {
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           backgroundColor: appConfig.theme.colors.primary[500],
-          backgroundImage: 'url(https://i.imgur.com/CMWTqJx.jpg?1)',
+          backgroundImage: appConfig.backgroundImage,
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
@@ -68,8 +68,10 @@ export default function PaginaInicial() {
             },
             width: '100%', maxWidth: '700px',
             borderRadius: '5px', padding: '32px', margin: '16px',
-            boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-            backgroundColor: appConfig.theme.colors.neutrals[700],
+            // boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
+            boxShadow: 'inset 0 0 1em red, 0 0 3em red',
+            // transparencia
+            backgroundColor: appConfig.theme.colors.transparents[700],
           }}
         >
           {/* Formulário */}
@@ -88,7 +90,11 @@ export default function PaginaInicial() {
             }}
           >
             <Titulo tag="h2">{appConfig.message}</Titulo>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Text variant="body3"
+              styleSheet={{
+                marginBottom: '32px',
+                color: appConfig.theme.colors.neutrals[300],
+              }}>
               {appConfig.name}
             </Text>
 

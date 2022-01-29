@@ -1,9 +1,16 @@
 import appConfig from '../config.json';
+import { Box, Text, TextField, Image, Button, GridDisplay } from '@skynexui/components';
 
 export default function Custom404() {
     return (
         <><div>
             [404 - Page Not Found]
+            <Button
+                    variant='tertiary'
+                    colorVariant='neutral'
+                    label='Logout'
+                    href="/"
+                />
         </div>
             <style jsx>{`
             div{

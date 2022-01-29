@@ -11,12 +11,12 @@ const supabaseClient = createClient(REACT_APP_SUPABASE_URL, REACT_APP_SUPABASE_A
 
 function escutaMensagensEmTempoReal(adicionaMensagem) {
     return supabaseClient
-      .from('mensagens')
-      .on('INSERT', (respostaLive) => {
-        adicionaMensagem(respostaLive.new);
-      })
-      .subscribe();
-  }
+        .from('mensagens')
+        .on('INSERT', (respostaLive) => {
+            adicionaMensagem(respostaLive.new);
+        })
+        .subscribe();
+}
 
 export default function ChatPage() {
     const roteamento = useRouter();
@@ -106,7 +106,7 @@ export default function ChatPage() {
             styleSheet={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 backgroundColor: appConfig.theme.colors.primary[500],
-                backgroundImage: 'url(https://i.imgur.com/CMWTqJx.jpg?1)',
+                backgroundImage: appConfig.backgroundImage,
                 backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 color: appConfig.theme.colors.neutrals['000']
             }}
@@ -116,9 +116,11 @@ export default function ChatPage() {
                     display: 'flex',
                     flexDirection: 'column',
                     flex: 1,
-                    boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
+                    // boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
+                    boxShadow: 'inset 0 0 1em red, 0 0 1em red',
                     borderRadius: '5px',
-                    backgroundColor: appConfig.theme.colors.neutrals[700],
+                    backgroundColor: appConfig.theme.colors.transparents[700],
+                    // backgroundColor: appConfig.theme.colors.neutrals[700],
                     height: '100%',
                     maxWidth: '95%',
                     maxHeight: '95vh',
@@ -132,7 +134,8 @@ export default function ChatPage() {
                         display: 'flex',
                         flex: 1,
                         height: '80%',
-                        backgroundColor: appConfig.theme.colors.neutrals[600],
+                        // backgroundColor: appConfig.theme.colors.neutrals[600],
+                        backgroundColor: appConfig.theme.colors.transparents[700],
                         flexDirection: 'column',
                         borderRadius: '5px',
                         padding: '16px',
@@ -156,8 +159,9 @@ export default function ChatPage() {
                         }}
                     >
                         <TextField
+                            //enviar mensagem quando apertar a tecla Enter
                             value={mensagem}
-                            placeholder="Insira sua mensagem aqui..."
+                            placeholder="Mensagem"
                             type="textarea"
                             onChange={(event) => {
                                 // // // // console.log('mensagem:', event.target.value);
@@ -194,7 +198,24 @@ export default function ChatPage() {
                             }} /> */}
 
 
-                        <Button iconName="arrowRight" />
+                        <Button iconName="arrowRight"
+                            // Enviar menagem através do botão
+                            value={mensagem}
+                            onClick={(event) => {
+                                if (event.type === 'click') {
+                                    if (!mensagem == '') {
+                                        handleNovaMensagem(mensagem);
+                                    }
+                                }
+                            }}
+                            styleSheet={{
+                                contrastColor: appConfig.theme.colors.neutrals["000"],
+                                mainColor: appConfig.theme.colors.primary[500],
+                                mainColorLight: appConfig.theme.colors.primary[200],
+                                mainColorStrong: appConfig.theme.colors.primary[900],
+
+                            }}
+                        />
                         {/* CallBack  */}
                         <ButtonSendSticker
                             onStickerClick={(sticker) => {
@@ -227,7 +248,7 @@ function Header() {
 }
 
 function MessageList(props) {
-    // // // console.log(props);
+    // console.log(props);
     return (
         <Box
             tag="ul"
