@@ -41,7 +41,7 @@ function Titulo(props) {
 
 export default function PaginaInicial() {
   //   const username = 'omariosouto';
-  const [username, setUsername] = React.useState('alura');
+  const [username, setUsername] = React.useState('github');
   const roteamento = useRouter();
 
   // getApiGitHub(username)
