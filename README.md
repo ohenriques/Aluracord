@@ -56,4 +56,8 @@
   - [Configurando ambiente JavaScript/NodeJS/Yarn](https://www.youtube.com/watch?v=GIz71YGzwP4)
   - [Documentação interativa com Storybook do SkynexUI](https://storybook.skynexui.dev/?path=/story/components-box--box-component)
   - [Extensão do Chrome para gravar tela](https://chrome.google.com/webstore/detail/screencastify-screen-vide/mmeijimgabbpbgpdklnllpncmdofkcpn) 🎥
+  - [Dicas de programação do DevSoutinho]([https://link](https://www.youtube.com/playlist?list=PLTcmLKdIkOWkJY8LJXs1GDqBnxCGsExBO))
+  - [Como criar um jogo do ZERO!](https://www.youtube.com/playlist?list=PLTcmLKdIkOWmeNferJ292VYKBXydGeDej)
+  - [Dicas de React e Web em geral](https://www.youtube.com/playlist?list=PLTcmLKdIkOWkVld6KvLJbUCPIOjqLg9cr)
+  - [Supabase](https://supabase.io/)
 # 
