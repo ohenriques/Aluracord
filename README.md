@@ -31,6 +31,8 @@
   - Stars
   - Seguidores
 - [ ] Colocar botões de interações para mandar a mensagem
+# Features 🚀
+- [ ] Implementar .env para as variáveis
 #
 # Others links 😉🔍
  - [Como trabalhar com um Fatch](https://medium.com/@omariosouto/entendendo-como-fazer-ajax-com-a-fetchapi-977ff20da3c6)
