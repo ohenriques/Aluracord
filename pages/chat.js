@@ -38,13 +38,13 @@ export default function ChatPage() {
 
         const subscription = escutaMensagensEmTempoReal((novaMensagem) => {
             console.log('Nova mensagem:', novaMensagem);
-            console.log('listaDeMensagens:', listaDeMensagens);
+            console.log('listaDeMensagem:', listaDeMensagem);
             // Quero reusar um valor de referencia (objeto/array) 
             // Passar uma função pro setState
 
             // setListaDeMensagens([
             //     novaMensagem,
-            //     ...listaDeMensagens
+            //     ...listaDeMensagem
             // ])
             setListaDeMensagens((valorAtualDaLista) => {
                 console.log('valorAtualDaLista:', valorAtualDaLista);
