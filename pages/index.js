@@ -13,19 +13,19 @@ function Titulo(props) {
                 color: ${appConfig.theme.colors.neutrals['000']};
                 font-size: 24px;
                 font-weight: 600;
-                font-family: 'Roboto Mono', monospace;
+                font-family: 'Neonderthaw', cursive;
             }
             `}</style>
     </>
   );
 }
 
-// function getApiGitHub(params) {
-//   fetch(`https://api.github.com/users/${params}`).then(async (rest) => {
-//     const result = await rest.json();
-//     // console.log(result);
-//   })
-// }
+function getApiGitHub(params) {
+  fetch(`https://api.github.com/users/${params}`).then(async (rest) => {
+    const result = await rest.json();
+    console.log(result);
+  })
+}
 // Componente React
 // function HomePage() {
 //     // JSX
@@ -43,7 +43,7 @@ export default function PaginaInicial() {
   //   const username = 'omariosouto';
   const [username, setUsername] = React.useState('github');
   const roteamento = useRouter();
-
+getApiGitHub(username)
   // getApiGitHub(username)
   // console.log(roteamento);
 
@@ -135,19 +135,19 @@ export default function PaginaInicial() {
                   mainColor: appConfig.theme.colors.neutrals[900],
                   mainColorHighlight: appConfig.theme.colors.primary[500],
                   backgroundColor: appConfig.theme.colors.neutrals[800],
-
                 },
               }}
             />
             <Button
+            // botão enviar username
               type='submit'
               label='Entrar'
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[100],
-                mainColorStrong: appConfig.theme.colors.primary[900],
+                contrastColor: appConfig.theme.colors.neutrals["050"],
+                mainColor: appConfig.theme.colors.primary[950],
+                mainColorLight: appConfig.theme.colors.primary["050"],
+                mainColorStrong: appConfig.theme.colors.primary[960],
               }}
             />
           </Box>

@@ -61,7 +61,7 @@ export default function ChatPage() {
     }, []);
 
     /*
-    
+    {
     // Usuario 
      
      - digita um texto no text area
@@ -74,14 +74,7 @@ export default function ChatPage() {
     - [x] Vamos usar o onChange e o useState(ter um if caso seja enter para limpar a variável)
     - [x] Lista as mensagens
 
-     */
-
-
-
-    // Sua lógica vai aqui
-
-    // ./Sua lógica vai aqui
-
+     }*/
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
             de: usuarioLogado,
@@ -198,7 +191,7 @@ export default function ChatPage() {
                             }} /> */}
 
 
-                        <Button iconName="arrowRight"
+                        {<Button iconName="arrowRight"
                             // Enviar menagem através do botão
                             value={mensagem}
                             onClick={(event) => {
@@ -214,8 +207,7 @@ export default function ChatPage() {
                                 mainColorLight: appConfig.theme.colors.primary[200],
                                 mainColorStrong: appConfig.theme.colors.primary[900],
 
-                            }}
-                        />
+                            }}/>}
                         {/* CallBack  */}
                         <ButtonSendSticker
                             onStickerClick={(sticker) => {
@@ -287,6 +279,9 @@ function MessageList(props) {
                                     borderRadius: '50%',
                                     display: 'inline-block',
                                     marginRight: '8px',
+                                }}
+                                onChange={(event) => {
+                                    console.log(event);
                                 }}
                                 src={`https://github.com/${mensagem.de}.png`}
                             />
