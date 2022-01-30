@@ -36,9 +36,10 @@
 #
 # Others links 😉🔍
  - [Como trabalhar com um Fatch](https://medium.com/@omariosouto/entendendo-como-fazer-ajax-com-a-fetchapi-977ff20da3c6)
-- Componentes ✳
+- Componentes ✳ 💅
   - [Mui(Material UI)](https://mui.com/pt/)
   - [Skynexui](https://skynexui.dev/)
+  - [Styled-Components](https://styled-components.com/)
 - Vídeos 🎬
   - [Validar Form com Reac](https://www.youtube.com/watch?v=cMq6k7ymv2s)
   - [Github Pro + Eslint](https://www.youtube.com/watch?v=yMRSDdifGW8&t=2s)
