@@ -33,6 +33,7 @@
 - [ ] Colocar botões de interações para mandar a mensagem
 # Features 🚀
 - [ ] Implementar .env para as variáveis
+  - [environmental-variables](https://medium.com/courtly-intrepid/environmental-variables-in-next-js-with-dotenv-599c5bbfdf74)
 #
 # Others links 😉🔍
  - [Como trabalhar com um Fatch](https://medium.com/@omariosouto/entendendo-como-fazer-ajax-com-a-fetchapi-977ff20da3c6)
