@@ -1,0 +1,19 @@
+...
+function Home() {
+  const [myData, setMyData] = useState([]);
+
+  useEffect(() => {
+    const data = getApiGitHub(); // atenção ele sempre vai retornar um array com varios obj [{name: "a"}, {name: "b"}, {name: "c"}]
+    setMyData(data);
+  }, []);
+  // para utilizar como obj você pode utilizar o forEach ou o map (o map é o mais utilizado)
+
+  // Ao fazer o map eu navego por esses objs e consigo pegar o valor deles.
+
+  return <div>
+    <ul>
+      {myData.map((item) => <li>{item.name}</li>) /* O item é um Obj*/}
+    </ul>
+  </div>
+}
+...

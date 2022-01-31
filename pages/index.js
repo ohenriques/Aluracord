@@ -20,32 +20,25 @@ function Titulo(props) {
   );
 }
 
-function getApiGitHub(params) {
-  fetch(`https://api.github.com/users/${params}`).then(async (rest) => {
-    const result = await rest.json();
-    console.log(result);
-  })
+function getApiGitHub(user) {
+  return fetch((`https://api.github.com/users/${user}`)).then(function (response) {
+    return response.json();
+  }).then(function (json) {
+    return json;
+  });
 }
-// Componente React
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-//             <h2>Discord - Alura Matrix</h2>
-//         </div>
-//     )
-// }
-// export default HomePage
 
 export default function PaginaInicial() {
   //   const username = 'omariosouto';
   const [username, setUsername] = React.useState('github');
   const roteamento = useRouter();
-getApiGitHub(username)
-  // getApiGitHub(username)
   // console.log(roteamento);
+
+  getApiGitHub(username).then(function (result) {
+    console.log('resultado =>', result);
+    return result;
+  });
+  console.log();
 
   return (
     <>
@@ -139,7 +132,7 @@ getApiGitHub(username)
               }}
             />
             <Button
-            // botão enviar username
+              // botão enviar username
               type='submit'
               label='Entrar'
               fullWidth

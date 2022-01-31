@@ -55,6 +55,7 @@ export default function ChatPage() {
             });
         });
 
+      
         return () => {
             subscription.unsubscribe();
         }
@@ -157,7 +158,7 @@ export default function ChatPage() {
                             placeholder="Mensagem"
                             type="textarea"
                             onChange={(event) => {
-                                // // // // console.log('mensagem:', event.target.value);
+                                // console.log('mensagem:', event.target.value);
                                 const valor = event.target.value;
                                 setMensagem(valor);
                             }}
@@ -179,19 +180,15 @@ export default function ChatPage() {
                             }}
                         />
 
-                        {/* <Button iconName="arrowRight"
-                            value="BTN de enviar"
-                            styleSheet={{
-                                contrastColor: appConfig.theme.colors.neutrals["000"],
-                                mainColor: appConfig.theme.colors.primary[500],
-                                mainColorLight: appConfig.theme.colors.primary[200],
-                                mainColorStrong: appConfig.theme.colors.primary[900],
-                                display: 'flex',
-                                alignItems: 'center',
-                            }} /> */}
 
+                        {/* CallBack  */}
+                        <ButtonSendSticker
+                            onStickerClick={(sticker) => {
+                                //console.log('[USANDO O COMPONENTE] Salvando esse sticker no banco: ', sticker);
+                                handleNovaMensagem(':sticker: ' + sticker);
+                            }} />
 
-                        {<Button iconName="arrowRight"
+                        <Button iconName="arrowRight"
                             // Enviar menagem através do botão
                             value={mensagem}
                             onClick={(event) => {
@@ -202,17 +199,23 @@ export default function ChatPage() {
                                 }
                             }}
                             styleSheet={{
-                                contrastColor: appConfig.theme.colors.neutrals["000"],
-                                mainColor: appConfig.theme.colors.primary[500],
-                                mainColorLight: appConfig.theme.colors.primary[200],
-                                mainColorStrong: appConfig.theme.colors.primary[900],
+                                borderRadius: '50%',
+                                padding: '0 3px 0 0',
+                                minWidth: '50px',
+                                minHeight: '50px',
+                                fontSize: '40px',
+                                marginBottom: '8px',
+                                lineHeight: '0',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: appConfig.theme.colors.primary[970],
+                                mainColorStrong: appConfig.theme.colors.primary[970],
+                                hover: {
+                                    filter: 'grayscale(0)',
+                                    backgroundColor: appConfig.theme.colors.primary[980],
+                                }
 
-                            }}/>}
-                        {/* CallBack  */}
-                        <ButtonSendSticker
-                            onStickerClick={(sticker) => {
-                                // // // console.log('[USANDO O COMPONENTE] Salvando esse sticker no banco: ', sticker);
-                                handleNovaMensagem(':sticker: ' + sticker);
                             }} />
                     </Box>
                 </Box>
@@ -279,12 +282,17 @@ function MessageList(props) {
                                     borderRadius: '50%',
                                     display: 'inline-block',
                                     marginRight: '8px',
-                                }}
-                                onChange={(event) => {
-                                    console.log(event);
+                                    hover: {
+                                        filter: 'grayscale(0)',
+                                        backgroundColor: appConfig.theme.colors.primary[980],
+                                        borderRadius: '10%',
+                                    }
                                 }}
                                 src={`https://github.com/${mensagem.de}.png`}
+
                             />
+
+
                             <Text tag="strong">
                                 {mensagem.de}
                             </Text>

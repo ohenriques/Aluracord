@@ -19,6 +19,7 @@ export function ButtonSendSticker(props) {
           minHeight: '50px',
           fontSize: '20px',
           marginBottom: '8px',
+          marginRight: '3px',
           lineHeight: '0',
           display: 'flex',
           alignItems: 'center',
@@ -27,6 +28,7 @@ export function ButtonSendSticker(props) {
           filter: isOpen ? 'grayscale(0)' : 'grayscale(1)',
           hover: {
             filter: 'grayscale(0)',
+            backgroundColor: appConfig.theme.colors.primary[980],
           }
         }}
         label="😋"
